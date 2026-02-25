@@ -1,4 +1,5 @@
 import "./CheckoutHeader.css" ;
+import { Link } from "react-router";
 export function CheckoutHeader() {
     return (
         <>
@@ -23,11 +24,11 @@ export function CheckoutHeader() {
                         className="checkout-header-middle-section">
                         Checkout 
                         (
-                            <a 
+                            <Link 
                                 className="return-to-home-link"
-                                href="/">
+                                to="/">
                                 3 items
-                            </a>
+                            </Link>
                         )
                     </div>
 
