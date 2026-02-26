@@ -6,7 +6,7 @@ export function TrackingPage() {
         <>
             <title>Tracking</title>
 
-            <link rel="icon" type="image/svg+xml" href="/images/icons/tracking-favicon.png"/>
+            <link rel="icon" type="image/svg+xml" href="/images/tracking-favicon.png"/>
 
             <Header />
 
