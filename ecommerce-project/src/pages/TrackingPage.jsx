@@ -8,9 +8,8 @@ import dayjs from 'dayjs';
 export function TrackingPage({ cart }) {
     const params = useParams();
     console.log(params);
-<<<<<<< HEAD
-=======
-    */
+
+
     const { orderId, productId } = useParams();
 
     const [order, setOrder]= useState(null);
