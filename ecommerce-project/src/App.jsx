@@ -11,6 +11,7 @@ import axios from 'axios';
 function App() {
     const [cart, setCart] = useState([]);
 
+    /*
     useEffect(() => {
         // ?expand=product
         // Query parameter = let us add additional info to our request
@@ -22,6 +23,14 @@ function App() {
                 setCart(response.data);
             });
     }, []);
+    */
+   useEffect(() => {
+    const fetchAppData = async() => {
+        const response = await axios.get('/api/cart-items?expand=product');
+        setCart(response.data);
+    }
+    fetchAppData();
+   }, []);
 
   return (
     <Routes>

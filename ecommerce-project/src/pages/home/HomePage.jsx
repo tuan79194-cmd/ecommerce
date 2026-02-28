@@ -18,6 +18,7 @@ export function HomePage({ cart }) {
     */
     const [products, setProducts] = useState([]);
 
+    /*
     useEffect(() => {
         axios.get('/api/products')
             .then((response) => {
@@ -25,6 +26,36 @@ export function HomePage({ cart }) {
                 setProducts(response.data);
         });
 
+    }, []);
+    */
+   // The inner function in useEffect should not return a Promise
+   // it is sort of breaking the rules of useEffect
+   // It should only return nothing or a cleanup function like this: 
+   /*
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            
+        });
+        return () => {
+            window.removeEventListener('scroll');
+        };
+    }, []);
+   */
+    // A cleanup function is useful If we want to do some cleanup when this component is removed
+   /*
+    useEffect(async() => {
+        const response = await axios.get('/api/products')
+        setProducts(response.data);
+    }, []);
+    */
+   // to solve this, we usually create a new function inside useEffect:
+    useEffect(() => {
+        const getHomeData = async() => {
+            const response = await axios.get('/api/products')
+            setProducts(response.data);
+        };
+
+        getHomeData();
     }, []);
 
     return (
