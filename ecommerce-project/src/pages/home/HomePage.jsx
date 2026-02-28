@@ -50,6 +50,8 @@ export function HomePage({ cart }) {
     */
    // to solve this, we usually create a new function inside useEffect:
     useEffect(() => {
+        // Temporarily add console.log to check if useEffect runs once.
+        console.log('useEffect');
         const getHomeData = async() => {
             const response = await axios.get('/api/products')
             setProducts(response.data);
