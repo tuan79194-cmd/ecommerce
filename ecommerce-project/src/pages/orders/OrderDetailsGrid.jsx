@@ -36,6 +36,10 @@ export function OrderDetailsGrids({ order }) {
 
                             <div className="product-actions">
                                 {/* /${order.id}/${orderProduct.product.id} */}
+                                {/* 
+                                    Update this link to :
+                                    /${orderId}/${productId}
+                                */}
                                 <Link to={`/tracking/${order.id}/${orderProduct.product.id}`}>
                                     <button className="track-package-button button-secondary">
                                         Track package
