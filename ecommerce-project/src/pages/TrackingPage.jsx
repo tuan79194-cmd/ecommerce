@@ -32,7 +32,6 @@ export function TrackingPage({ cart }) {
         return orderProduct.productId === productId;
     })
 
->>>>>>> 9987d48 (7k-load the data for the Tracking Page from the backend. Using axios, useEffect, and the orderId from the URL-1054PM-28022026(exactly))
     return (
         <>
             <title>Tracking</title>
