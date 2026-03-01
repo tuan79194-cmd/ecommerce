@@ -5,6 +5,7 @@ import { Header } from '../../components/Header';
 import './HomePage.css';
 // import { formatMoney } from '../../utils/money';
 import { ProductsGrid } from './ProductsGrid';
+import HomeFavicon from '../../../public/images/home-favicon.png';
 
 export function HomePage({ cart }) {
     /*
@@ -61,7 +62,7 @@ export function HomePage({ cart }) {
     return (
         <>
             <title>Ecommerce Project</title>
-            <link rel="icon" type="image/svg+xml" href="/images/home-favicon.png" />
+            <link rel="icon" type="image/svg+xml" href={HomeFavicon} />
 
             <Header cart={cart}/>
 

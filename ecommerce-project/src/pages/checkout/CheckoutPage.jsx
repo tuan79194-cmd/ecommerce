@@ -4,7 +4,7 @@ import { CheckoutHeader } from '../../components/CheckoutHeader';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 // import dayjs from 'dayjs';
-import HomeFavicon from '../../../public/images/home-favicon.png';
+import CartFavicon from '../../../public/images/cart-favicon.png';
 import { OrderSummary } from './OrderSummary';
 import { PaymentSummary } from './PaymentSummary';
 
@@ -39,7 +39,7 @@ export function Checkoutpage({ cart }) {
     return (
         <>
             <title>Checkout</title>
-            <link rel="icon" type="image/svg+xml" href={ HomeFavicon } />
+            <link rel="icon" type="image/svg+xml" href={ CartFavicon } />
 
             <CheckoutHeader 
                 cart={cart}/>
