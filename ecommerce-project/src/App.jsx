@@ -24,12 +24,12 @@ function App() {
             });
     }, []);
     */
-   useEffect(() => {
-    const fetchAppData = async() => {
+    const loadCart = async() => {
         const response = await axios.get('/api/cart-items?expand=product');
         setCart(response.data);
-    }
-    fetchAppData();
+    };
+   useEffect(() => {
+    loadCart();
    }, []);
 
   return (
@@ -37,7 +37,8 @@ function App() {
         {/* index does the same thing as path="/" */}
         <Route 
             index 
-            element={<HomePage cart={cart}/>} />
+            element={<HomePage cart={cart}
+            loadCart={loadCart}/>} />
 
         <Route 
             path="checkout" 
@@ -53,7 +54,7 @@ function App() {
         
         <Route 
             path="*"
-            element={<NotFoundPage />}/>
+            element={<NotFoundPage cart={cart} />}/>
     </Routes>
   )
 }
