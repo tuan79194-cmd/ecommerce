@@ -1,11 +1,11 @@
-import dayjs from 'dayjs';
-import { formatMoney } from "../../utils/money";
+// import dayjs from 'dayjs';
+// import { formatMoney } from "../../utils/money";
 // import { Fragment } from "react";
 // import { Link } from "react-router";
 import { OrderDetailsGrids } from './OrderDetailsGrid';
 import { OrderHeader } from './OrderHeader';
 
-export function OrderGrid({ orders }) {
+export function OrderGrid({ orders, loadCart }) {
     return(
         <div className="orders-grid">
             {
@@ -15,7 +15,8 @@ export function OrderGrid({ orders }) {
                             <OrderHeader 
                                 order={order}/>
                             <OrderDetailsGrids 
-                                order={order}/>
+                                order={order}
+                                loadCart={loadCart}/>
 
                         </div>                                     
                     );
