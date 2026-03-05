@@ -24,6 +24,7 @@ function App() {
             });
     }, []);
     */
+   window.axios = axios;
     const loadCart = async() => {
         const response = await axios.get('/api/cart-items?expand=product');
         setCart(response.data);
