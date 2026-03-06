@@ -6,6 +6,7 @@ import './HomePage.css';
 // import { formatMoney } from '../../utils/money';
 import { ProductsGrid } from './ProductsGrid';
 import HomeFavicon from '../../../public/images/home-favicon.png';
+import { useSearchParams } from 'react-router';
 
 export function HomePage({ cart, loadCart }) {
     /*
@@ -18,8 +19,8 @@ export function HomePage({ cart, loadCart }) {
         });
     */
     const [products, setProducts] = useState([]);
-
-
+    const [searchParams] = useSearchParams();
+    const search = searchParams.get('search');
 
     /*
     useEffect(() => {
@@ -54,12 +55,13 @@ export function HomePage({ cart, loadCart }) {
    // to solve this, we usually create a new function inside useEffect:
     useEffect(() => {
         const getHomeData = async() => {
-            const response = await axios.get('/api/products')
+            const urlPath = search ? '/api/products?search=${search}' : '/api/products';
+            const response = await axios.get(urlPath)
             setProducts(response.data);
         };
 
         getHomeData();
-    }, []);
+    }, [search]);
 
 
     return (
