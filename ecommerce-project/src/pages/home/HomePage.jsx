@@ -19,6 +19,8 @@ export function HomePage({ cart, loadCart }) {
     */
     const [products, setProducts] = useState([]);
 
+
+
     /*
     useEffect(() => {
         axios.get('/api/products')
@@ -58,6 +60,7 @@ export function HomePage({ cart, loadCart }) {
 
         getHomeData();
     }, []);
+
 
     return (
         <>
