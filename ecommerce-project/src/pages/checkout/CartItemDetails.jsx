@@ -11,8 +11,19 @@ export function CartItemDetails({ cartItem, loadCart }) {
         await loadCart();
     };
 
-    const updateQuantity = () => {
-        setIsUdpatingQuantity(isUdpatingQuantity => !isUdpatingQuantity);
+    const updateQuantity = async () => {
+        if (isUdpatingQuantity) {
+            await axios.put(`/api/cart-items/${cartItem.productId}`, 
+                {
+                    quantity: Number(quantity),
+                }
+            );
+        await loadCart();
+        setIsUdpatingQuantity(false);
+        }
+        else {
+            setIsUdpatingQuantity(true);
+        }
     };
 
     const updateQuantityInput = (event) => {
