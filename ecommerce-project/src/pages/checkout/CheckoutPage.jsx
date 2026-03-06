@@ -55,6 +55,8 @@ export function Checkoutpage({ cart, loadCart }) {
             let response = await axios.get('api/delivery-options?expand=estimatedDeliveryTime');
             setDeliveryOptions(response.data);
         };
+
+        fetchDeliveryOptions();
     }, []);
     // Second useEffect : original useEffect before being seperated
     useEffect(() => {
@@ -62,6 +64,7 @@ export function Checkoutpage({ cart, loadCart }) {
             let response = await axios.get('/api/payment-summary');
             setPaymentSummary(response.data);
         }
+        fetchPaymentSummmary();
     }), [cart];
     return (
         <>
