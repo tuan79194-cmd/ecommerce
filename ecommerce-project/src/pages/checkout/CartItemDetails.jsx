@@ -25,6 +25,9 @@ export function CartItemDetails({ cartItem, loadCart }) {
                 <div className="product-quantity">
                     <span>
                         Quantity: 
+                            <input 
+                                type="text" 
+                                className="inputQuantity"/>
                             <span className="quantity-label">
                             {cartItem.quantity}
                             </span>
