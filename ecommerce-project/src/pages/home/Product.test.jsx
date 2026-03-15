@@ -68,6 +68,17 @@ describe('Product component', () => {
                 quantity: 1
             }
         );
-        expect(loadCart).toHaveBeenCalled();
+        expect(loadCart).toHaveBeenCalled();    
     });
+
+    it("select a quantity", () => {
+        render(<Product 
+            product={product} 
+            loadCart={loadCart}/>);
+
+        const quantitySelector = screen.getByTestId("product-quantity-selector");
+        expect(quantitySelector).toHaveValue("1");
+        expect(quantitySelector).toHaveValue("2");
+    });
+
 });
