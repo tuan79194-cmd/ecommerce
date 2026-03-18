@@ -71,7 +71,7 @@ export function PaymentSummary({ paymentSummary, loadCart }) {
                         </div>
 
                         <div className="payment-summary-row total-row"
-                            data-testid="payment-summary-total-row">
+                            data-testid="payment-summary-total">
                             <div>Order total:</div>
                             <div className="payment-summary-money">
                                 {
