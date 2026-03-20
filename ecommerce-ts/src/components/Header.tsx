@@ -10,7 +10,15 @@ import CartIcon from '../assets/images/icons/cart-icon.png';
 
 import './Header.css';
 
-export function Header({ cart }) {
+type HeaderProps = {
+    cart: {
+        productId: string;
+        quantity: number;
+        deliveryOptionId: string;
+    }[];
+};
+
+export function Header({ cart } : HeaderProps) {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams(); // read parameters after '?' on URL bars
     const searchText = searchParams.get('search');
