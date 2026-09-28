@@ -68,6 +68,10 @@ export function Header({ cart } : HeaderProps) {
                 </div>
 
                 <div className="right-section">
+                    <NavLink className="login-link header-link" to="/login">
+
+                        <span className="login-text">Login</span>
+                    </NavLink>
                     <NavLink className="orders-link header-link" to="/orders">
 
                         <span className="orders-text">Orders</span>
